@@ -7,16 +7,32 @@ vrchat.com随缘被阻断，无解。由于部分域名解析到美国导致可�
 ```
 # vrc
 143.204.86.92    assets.vrchat.com
-104.18.6.156    vrchat.com
+104.18.7.156    vrchat.com
 104.18.26.36    api.vrchat.cloud
 35.227.244.186    config.uca.cloud.unity3d.com
 13.35.39.108    d348imysud55la.cloudfront.net
 198.185.159.144    hello.vrchat.com
-104.18.6.156    www.vrchat.com
+104.18.7.156    www.vrchat.com
 35.241.52.229    cdp.cloud.unity3d.com
 ```
 ### 追加
+#### hosts文件路径
 Windows的hosts文件地址
 ```
 C:\WINDOWS\system32\drivers\etc
 ```
+#### 推荐的dns设置
+使用港澳台dns辅助hosts文件解析非必要服务（如皮肤下载地图下载）提高正确解析概率的同时能让解析出的节点更靠近大陆，ping值更少传输速率提高。
+```
+我使用的两个dns
+101.101.101.101（它本身也是它官网的地址）
+168.95.192.1（中华电信）
+```
+win11最好在控制面板里面改dns地址，因为设置里的依旧很玄学有时候载不上。换完dns开关网络理论上就能刷新dns缓存了，实在不行可以在管理员权限的cmd里面使用“ipconfig/flushdns”。使用大陆外的dns会导致国内的站点访问速度变慢或者不能访问，所以不玩游戏的时候记得改回来。
+#### 疑难解答与技巧
+* 如果发现使用后还是卡在vrc登录目前有三个解决方法
+  * 把vrchat.com和www.vrchat.com的IP改为104.18.6.156。但是我这边的情况是104.18.7.156反而比104.18.6.156稳定
+  * 如果上述改动没用，那么可能是运营商突然抽风给临时ban了。等一等可能就好了，两个IP都等等试试
+  * 如果半小时了还是没有用。那么我这边目前没有可用的直连方案了，直接上有接管dns或者自动部署hosts的加速器吧。
+* 如果是多人游戏进不去请尝试用亚洲周边国家的ip查询站点解析除www.vrchat.com和vrchat.com以外的站点的IP并且把正确的替换上去。
+* ping指令很有用。ping域名可以知道当前hosts是否在生效以及当前绑定的IP是否被暂时或永久阻断。
